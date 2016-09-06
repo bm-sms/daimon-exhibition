@@ -1,0 +1,20 @@
+<h1>Mylist</h1>
+
+<% if @products.empty? %>
+  There are not product yet.
+<% else %>
+  <%= form_for @inquiry, url: new_inquiry_path, method: :get do |f| %>
+    <ul>
+      <% @products.each do |product| %>
+        <li>
+          <label>
+            <%= f.check_box 'product_ids', {multiple: true}, product.id, nil %>
+            <%= product.name %>
+          </label>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= f.submit 'Inquiry with these products' %>
+  <% end %>
+<% end %>

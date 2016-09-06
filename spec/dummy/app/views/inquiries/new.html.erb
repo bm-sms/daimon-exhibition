@@ -1,0 +1,24 @@
+<h1>Inquiry</h1>
+
+<%= form_for @inquiry do |f| %>
+  <ul>
+    <% @inquiry.products.each do |product| %>
+      <li>
+        <%= f.hidden_field 'product_ids', {value: product.id, multiple: true} %>
+        <%= product.name %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="fields">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="fields">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <%= f.submit 'Submit' %>
+<% end %>

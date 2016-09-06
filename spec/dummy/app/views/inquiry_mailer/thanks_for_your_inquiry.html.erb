@@ -1,0 +1,11 @@
+<h1>Thanks for your inquiry, <%= @inquiry.name %>.</h1>
+
+<p>
+  The following products are submitted with your inquiry:
+
+  <ul>
+    <% @inquiry.products.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+</p>

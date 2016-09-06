@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Daimon::Exhibit</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h2>Menus</h2>
+
+    <ul>
+      <li><%= link_to 'Products', products_path %></li>
+      <li><%= link_to 'Mylist', mylist_products_path %></li>
+    </ul>
+
+    <% if notice %>
+      <div class="notice">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

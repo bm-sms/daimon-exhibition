@@ -1,0 +1,8 @@
+<h1><%= @product.name %></h1>
+<p>This is nice product.</p>
+
+<% if mylist.include?(@product) %>
+  <%= link_to 'Remove this product from mylist', mylist_product_path(@product), data: {method: :delete} %>
+<% else %>
+  <%= link_to 'Add this product to mylist', mylist_product_path(@product), data: {method: :post} %>
+<% end %>
