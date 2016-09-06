@@ -1,6 +1,4 @@
-require "daimon/exhibition/engine"
-require "daimon/exhibition/model"
-require "daimon/exhibition/controller"
+require 'daimon/exhibition/engine'
 
 module Daimon::Exhibition
   class << self
