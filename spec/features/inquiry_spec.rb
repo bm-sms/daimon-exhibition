@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Inquiry', :js do
   let!(:product_to_inquiry)     { create(:product, name: 'Awesome product') }
   let!(:product_not_to_inquiry) { create(:product, name: 'Normal product') }
-  let!(:product_not_to_mylist) { create(:product, name: 'Bad product') }
+  let!(:product_not_to_mylist)  { create(:product, name: 'Bad product') }
 
   background do
     add_product_to_mylist product_to_inquiry
