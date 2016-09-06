@@ -20,7 +20,7 @@ module Daimon
       def ids_by_type(type = nil)
         if type
           # To keep key for type.
-          {type => []}.merge(@ids.deep_dup)
+          {type => []}.with_indifferent_access.merge(@ids.deep_dup)
         else
           @ids.deep_dup
         end
