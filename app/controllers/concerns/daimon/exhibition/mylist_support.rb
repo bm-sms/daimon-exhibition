@@ -60,7 +60,7 @@ module Daimon
           @exhibits = exhibit_scope.merge(mylist.exhibits_of(exhibit_type))
 
           assign_exhibits_variable @exhibits
-          assign_inquiry_variable @exhibits
+          assign_inquiry_variable @exhibits if has_inquiry?
 
           respond_to do |format|
             format.html
@@ -107,6 +107,10 @@ module Daimon
 
         def inquiry_type
           ::Daimon::Exhibition::Mapping.detect_inquiry_type_by(exhibit_type)
+        end
+
+        def has_inquiry?
+          inquiry_class.present?
         end
 
         def assign_exhibits_variable(exhibits)
